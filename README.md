@@ -23,9 +23,9 @@ project-root/
 │       │   │   └── tests/
 │       │   ├── integration/
 │       │   │   └── tests/
-│       │   └── config/
-│       │       └── environments/        # Environment specific configurations.
-│       │       └── playwright.config.ts # Specific Playwright configuration for tests.
+│       │   ├── config/
+│       │   │    └── environments/        # Environment specific configurations.
+│       │   │    └── playwright.config.ts # Specific Playwright configuration for tests.
 │       │   ├── utils/
 │       │   ├── fixtures/
 │       │   └── run_tests.ts             # Custom test runner script (for complex scenarios).
