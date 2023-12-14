@@ -7,36 +7,33 @@ This repository provides a boilerplate setup for a Playwright testing suite. It 
 ```plaintext
 project-root/
 │
-├── src/                                 # Main application source code.
+├── src/                             # Main application source code.
 │   ├── components/
 │   ├── pages/
 │   └── ...
+|
+├── tests/						     # Playwright test suite.
+│   ├── api/
+│   │   ├── requests/
+│   │   └── tests/
+│   ├── config/
+│   │   └── environments/           # Environment specific configurations.
+│   │   └── playwright.config.ts    # Specific Playwright configuration for tests.
+│   ├── e2e/
+│   │   ├── pages/                   # Page Object Models (POM) for E2E testing.
+│   │   └── tests/
+│   ├── fixtures/
+│   ├── integration/
+│   │   └── tests/
+│   ├── utils/
+│   └── run_tests.ts                 # Custom test runner script (for complex scenarios).
+│   └── ...
 │
-├── playwright/                          # Playwright test suite.
-│   └── src/
-│       ├── tests/
-│       │   ├── api/
-│       │   │   ├── requests/
-│       │   │   └── tests/
-│       │   ├── e2e/
-│       │   │   ├── pages/               # Page Object Models (POM) for E2E testing.
-│       │   │   └── tests/
-│       │   ├── integration/
-│       │   │   └── tests/
-│       │   ├── config/
-│       │   │    └── environments/        # Environment specific configurations.
-│       │   │    └── playwright.config.ts # Specific Playwright configuration for tests.
-│       │   ├── utils/
-│       │   ├── fixtures/
-│       │   └── run_tests.ts             # Custom test runner script (for complex scenarios).
-│       └── ...
-│
-└── playwright.config.ts          		 # Global Playwright configuration file.
+└── playwright.config.ts             # Global Playwright configuration file.
 ```
 
 Each directory and file has a specific purpose:
 
--   `src/`: Contains the source code of the application.
 -   `tests/`: Root directory for all Playwright test cases and related files.
     -   `api/`:
         -   `requests/`: Functions that encapsulate API requests.
