@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
 
-export class LoginPage {
+export class HomePage {
     readonly page: Page;
 
     constructor(page: Page) {
@@ -8,7 +8,7 @@ export class LoginPage {
     }
 
     async goTo() {
-        await this.page.goto('/login');
+        await this.page.goto('/');
     }
 
     // Methods to interact with login page elements

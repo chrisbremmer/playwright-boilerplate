@@ -6,15 +6,13 @@ const config: PlaywrightTestConfig = {
 
     // Set up any overrides or additional settings for tests in this directory
     use: {
+        baseURL: 'https://vuoriclothing.com/',
         // Example: set headless to false if these tests should be observed during development
         headless: false,
     },
 
     // Define any custom reporter(s) you want to use for these tests
     reporter: 'html',
-
-    // If you want to use a specific baseURL for these tests, you can set it here
-    // baseURL: 'http://test-specific-url.com',
 
     // You could also include specific timeout settings, if different from the main config
     timeout: 20000, // example of increasing the timeout for these tests
