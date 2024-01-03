@@ -4,9 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test:e2e": "playwright test playwright/src/tests/e2e",
-        "test:api": "playwright test playwright/src/tests/api",
-        "test:integration": "playwright test playwright/src/tests/integration",
+        "test:e2e": "playwright test tests/e2e",
+        "test:api": "playwright test tests/api",
+        "test:integration": "playwright test tests/integration",
         "test": "npm run test:e2e && npm run test:api && npm run test:integration"
     },
     "keywords": [],
