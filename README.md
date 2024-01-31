@@ -1,6 +1,6 @@
-# Vuori-Automation Testing Suite
+# Playwright Boilerplate
 
-This repository provides a comprehensive setup for a Playwright testing suite tailored for the Vuori web application. It supports end-to-end, API, integration, and load testing to ensure thorough validation of both functionality and performance. Here is the detailed project structure with descriptions for each section.
+This repository provides a comprehensive setup for a Playwright testing suite tailored for an Ecommerce application. It supports end-to-end, API, integration, and load testing to ensure thorough validation of both functionality and performance. Here is the detailed project structure with descriptions for each section.
 
 ## Project Structure
 
