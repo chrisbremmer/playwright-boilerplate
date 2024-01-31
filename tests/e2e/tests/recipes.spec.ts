@@ -22,9 +22,9 @@ test.describe('Recipes UI with Mocked Data', () => {
         await recipesPage.goto();
     });
 
-    test('should display the recipes container on the page', async () => {
+    test('should display the recipes heading on the page', async () => {
         // Test that the recipes container is visible
-        expect(recipesPage.recipesContainerVisible()).toBeTruthy();
+        expect(recipesPage.recipesHeadingVisible()).toBeTruthy();
     });
 
     test('should display all recipes from the fixtures on the page', async () => {

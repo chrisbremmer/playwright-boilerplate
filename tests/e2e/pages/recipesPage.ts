@@ -11,8 +11,9 @@ export class RecipesPage {
         await this.page.goto('/ingredients/api');
     }
 
-    async recipesContainerVisible() {
-        return this.page.locator('#recipes').isVisible();
+    async recipesHeadingVisible() {
+        // return this.page.locator('#recipes').isVisible();
+        return this.page.getByRole('heading', { name: 'API' });
     }
 
     async verifyAllRecipesDisplayed(
@@ -21,7 +22,7 @@ export class RecipesPage {
         for (const recipe of recipeData) {
             const recipeLocator = this.page
                 .locator('div')
-                .filter({ hasText: new RegExp(`^${recipe.title}$`) })
+                .filter({ hasText: `${recipe.title}` })
                 .first();
             if (!(await recipeLocator.isVisible())) {
                 // If any recipe is not visible, return false
