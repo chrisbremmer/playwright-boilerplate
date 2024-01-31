@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "title": "Mocked Chicken",
+        "image": "/images/hot-fried-chicken.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Mocked Skewers",
+        "image": "/images/mixed-grill-skewers.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Mocked Sushi",
+        "image": "/images/rice-paper-sushi-rolls.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Mocked Salmon",
+        "image": "/images/salmon-mixed-vegetables.jpg"
+    },
+    {
+        "id": "5",
+        "title": "Mocked Beef",
+        "image": "/images/shredded-beef-tacos.jpg"
+    }
+]
