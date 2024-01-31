@@ -1,55 +1,76 @@
-# Playwright Testing Suite Boilerplate
+# Vuori-Automation Testing Suite
 
-This repository provides a boilerplate setup for a Playwright testing suite. It is structured to support end-to-end, API, and integration testing for web applications. Below is the project structure with descriptions for each part.
+This repository provides a comprehensive setup for a Playwright testing suite tailored for the Vuori web application. It supports end-to-end, API, integration, and load testing to ensure thorough validation of both functionality and performance. Here is the detailed project structure with descriptions for each section.
 
 ## Project Structure
 
 ```plaintext
-project-root/
+vuori-automation/
 │
-├── src/                             # Main application source code.
-│   ├── components/
-│   ├── pages/
-│   └── ...
-|
-├── tests/						     # Playwright test suite.
+├── .github/                         # CI/CD workflows for GitHub Actions.
+│   └── workflows/
+│       └── playwright.yml
+│
+├── tests/
 │   ├── api/
 │   │   ├── requests/
 │   │   └── tests/
-│   ├── config/
-│   │   └── environments/           # Environment specific configurations.
-│   │   └── playwright.config.ts    # Specific Playwright configuration for tests.
 │   ├── e2e/
-│   │   ├── pages/                   # Page Object Models (POM) for E2E testing.
+│   │   ├── pages/
 │   │   └── tests/
-│   ├── fixtures/
 │   ├── integration/
 │   │   └── tests/
-│   ├── utils/
-│   └── run_tests.ts                 # Custom test runner script (for complex scenarios).
-│   └── ...
+│   ├── load/
+│   │   ├── config/
+│   │   ├── data/
+│   │   ├── reports/
+│   │   ├── scenarios/
+│   │   └── scripts/
+│   └── utils/
 │
-└── playwright.config.ts             # Global Playwright configuration file.
+├── playwright.config.ts
+└── ...
 ```
 
-Each directory and file has a specific purpose:
+Each directory is crafted for a specific testing aspect:
 
--   `tests/`: Root directory for all Playwright test cases and related files.
-    -   `api/`:
-        -   `requests/`: Functions that encapsulate API requests.
-        -   `tests/`: API test specs
-    -   `config/`:
-        -   `environments/`: Environment-specific configurations.
-        -   `playwright.config.ts`: Playwright configuration specific to the test suite.
-    -   `e2e/`:
-        -   `pages/`: Page Object Models for use in E2E tests.
-        -   `tests/`: E2E test specs.
-    -   `fixtures/`: Contains static data files used within tests.
-    -   `integration/`: Integration tests to check the combined functionality of different application modules.
-    -   `utils/`: Utility scripts and helpers that support test implementation.
-    -   `run_tests.ts`: A custom Node.js script for running tests with additional logic or in a specific sequence.
--   `playwright.config.ts` (at the root): The global Playwright configuration file that sets default options for all tests.
+-   `tests/`: The main directory housing all test-related files.
+    -   `api/`: Holds API testing specifications and request helpers.
+        -   `requests/`: Encapsulated API requests for reuse across test specs.
+        -   `tests/`: API test specifications and suites.
+    -   `e2e/`: Contains end-to-end test specifications and Page Object Models.
+        -   `pages/`: Page Object Models that abstract page details for E2E tests.
+        -   `tests/`: End-to-end test specifications.
+    -   `integration/`: Integration test specifications to ensure module interoperability.
+    -   `load/`: Load testing configurations, data, and scripts.
+        -   `config/`: Environment and load test configurations.
+        -   `data/`: Data files for dynamic load testing.
+        -   `reports/`: Generated reports from load test runs.
+        -   `scenarios/`: Defined user scenarios for load testing.
+        -   `scripts/`: Playwright scripts for complex user interactions in load tests.
+    -   `utils/`: Reusable utilities and helpers for test setup, execution, and teardown.
+-   `.github/workflows/playwright.yml`: Defines the CI/CD pipeline that runs tests on every push or pull request.
 
 ## Running Tests
 
-To run the tests, use the npm scripts defined in `package.json` or the custom `run_tests.ts` script for complex scenarios.
+Execute the tests with the following commands:
+
+```bash
+# Run all tests
+npm run test
+
+# Run API tests
+npm run test:api
+
+# Run end-to-end tests
+npm run test:e2e
+
+# Run load tests
+npm run test:load
+```
+
+For detailed test execution and additional scripts, refer to the `package.json` scripts section.
+
+## Continuous Integration
+
+This project uses GitHub Actions for continuous integration, automatically triggering tests on push or pull requests to ensure code integrity. The workflow is defined in the `.github/workflows/playwright.yml` file.
