@@ -21,4 +21,4 @@ jobs:
               if: always()
               with:
                   name: artillery-report
-                  path: ./tests/load/reports/testRunReport.json
+                  path: tests/load/reports/testRunReport.json
