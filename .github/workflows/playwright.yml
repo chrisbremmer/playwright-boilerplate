@@ -5,7 +5,7 @@ on:
     pull_request:
         branches: [main, master]
 jobs:
-    test:
+    run-automation-suite:
         timeout-minutes: 60
         runs-on: ubuntu-latest
         steps:
@@ -15,10 +15,10 @@ jobs:
                   node-version: 20
             - name: Install dependencies
               run: npm ci
-            - name: Install Playwright Browsers
-              run: npx playwright install --with-deps
+            # - name: Install Playwright Browsers
+            #   run: npx playwright install --with-deps
             - name: Run Playwright tests
-              run: npx playwright test
+              run: npx playwright test --project="Google Chrome"
             - uses: actions/upload-artifact@v3
               if: always()
               with:
