@@ -74,5 +74,3 @@ For detailed test execution and additional scripts, refer to the `package.json` 
 ## Continuous Integration
 
 This project uses GitHub Actions for continuous integration, automatically triggering tests on push or pull requests to ensure code integrity. The workflow is defined in the `.github/workflows/playwright.yml` file.
-
-Testing workflows
