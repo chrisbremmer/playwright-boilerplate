@@ -1,0 +1,24 @@
+name: Load tests
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    load-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Load tests
+              uses: artilleryio/action-cli@v1
+              with:
+                  command: run ./tests/load/scenarios/browserLoadTest.yml --output ./tests/load/reports/testRunReport.json
+            - name: Upload artifact
+              uses: actions/upload-artifact@v3
+              if: always()
+              with:
+                  name: artillery-report
+                  path: ./tests/load/reports/testRunReport.json

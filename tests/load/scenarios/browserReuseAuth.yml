@@ -1,0 +1,23 @@
+config:
+    target: https://iron-session-example.vercel.app/
+    phases:
+        - arrivalRate: 1
+          duration: 10
+    engines:
+        playwright:
+            launchOptions:
+                headless: false
+            contextOptions:
+                storageState: './storage.json'
+    processor: '../scripts/reuseAuth.js'
+    variables:
+        githubUsername: 'chrisbremmer'
+
+before:
+    engine: playwright
+    flowFunction: loginUserAndSaveStorage
+
+scenarios:
+    - name: go_to_profile_page_and_logout
+      engine: playwright
+      flowFunction: goToProfilePageAndLogout

@@ -1,0 +1,12 @@
+config:
+    target: 'https://www.artillery.io'
+    phases:
+        - arrivalRate: 1
+          duration: 10
+    engines:
+        playwright: {}
+    processor: ../scripts/loadTesting.js
+scenarios:
+    - name: 'cloud_waitlist_signup_scenario'
+      engine: playwright
+      flowFunction: 'cloudWaitlistSignupFlow'

@@ -1,0 +1,15 @@
+{
+  "cookies": [
+    {
+      "name": "iron-session/examples/next.js",
+      "value": "Fe26.2*1*57915994fece640b117cd5698a1de9e1387450362bb110263260b07681628c82*02FDy0_q0q7aAHt2MIZZQw*oX9PyTR1hFkRH4H_4fs5NLfQ5jPg4APbYrbXoG1ZxQmAlLt5hSIp-Ti2mhxtlHkFkbcdluhLlqQhBA1ILC7ctwY0Mrk5qRJByjqdYCGfWtwQin5vB8KhK7vR03txq7sngmJOFtB1KLNRaNLOMIe7P7wXF2M6u8thABkf_Vz0zqY*1708045181514*059868b36252f70c734aa474585c502a45d32c268736f696c9835ec0d355fbf9*Ney7gSiwp71qbmGnWO72GMxM7SD8JEIiyrCIEcx2uU4~2",
+      "domain": "iron-session-example.vercel.app",
+      "path": "/",
+      "expires": 1708045121.605828,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
