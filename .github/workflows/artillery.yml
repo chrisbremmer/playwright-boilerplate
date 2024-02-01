@@ -31,4 +31,3 @@ jobs:
               with:
                   name: artillery-report
                   path: tests/load/reports/
-                  retention-days: 30
