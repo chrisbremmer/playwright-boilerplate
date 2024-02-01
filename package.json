@@ -8,7 +8,7 @@
         "test:api": "playwright test tests/api",
         "test:integration": "playwright test tests/integration",
         "test": "npm run test:e2e && npm run test:api && npm run test:integration",
-        "test:load": "npx artillery run --output ./tests/load/reports/testRunReport.json tests/load/scenarios/browserLoadTest.yml && npx artillery report tests/load/reports/testRunReport.json"
+        "test:load": "npx artillery run --output ./tests/load/reports/testRunReport.json tests/load/scenarios/hello-world.yml && npx artillery report tests/load/reports/testRunReport.json"
     },
     "keywords": [],
     "author": "",
@@ -18,7 +18,7 @@
         "@types/node": "^20.10.4"
     },
     "dependencies": {
-        "artillery": "^1.7.4",
+        "artillery": "^2.0.4",
         "dotenv": "^16.4.1"
     }
 }
