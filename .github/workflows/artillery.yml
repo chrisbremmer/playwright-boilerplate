@@ -1,4 +1,4 @@
-name: Load tests
+name: Run the load tests
 
 on:
     push:
@@ -8,17 +8,27 @@ on:
     workflow_dispatch:
 
 jobs:
-    load-test:
+    test:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Load tests
-              uses: artilleryio/action-cli@v1
+            - name: Check out project
+              uses: actions/checkout@v3
+
+            - name: Install Node.js
+              uses: actions/setup-node@v3
               with:
-                  command: run ./tests/load/scenarios/browserLoadTest.yml --output ./tests/load/reports/testRunReport.json
-            - name: Upload artifact
-              uses: actions/upload-artifact@v3
+                  node-version: 18
+
+            - name: Clean install the project
+              run: npm ci
+
+            - name: Run load tests
+              run: npm run test:load
+
+            - uses: actions/upload-artifact@v3
               if: always()
               with:
                   name: artillery-report
-                  path: tests/load/reports/testRunReport.json
+                  path: tests/load/reports/
+                  retention-days: 30
