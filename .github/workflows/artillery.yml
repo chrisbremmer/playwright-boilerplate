@@ -15,7 +15,7 @@ jobs:
             - name: Load tests
               uses: artilleryio/action-cli@v1
               with:
-                  command: run ./tests/load/scenarios/browserLoadTest.yml --output ./tests/load/reports/testRunReport.json
+                  command: run tests/load/scenarios/browserLoadTest.yml --output tests/load/reports/testRunReport.json
             - name: Upload artifact
               uses: actions/upload-artifact@v3
               if: always()
