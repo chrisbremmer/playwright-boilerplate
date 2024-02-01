@@ -1,4 +1,4 @@
-name: Run the example tests
+name: Run the playwright tests
 
 on:
     push:
@@ -8,7 +8,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    test:
+    run-automation:
         runs-on: ubuntu-latest
 
         steps:
